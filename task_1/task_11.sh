@@ -1,2 +1,3 @@
- echo '"Hello, DevOps!' > ~/hello.txt && cat ~/hello.txt
+#!/bin/sh
+echo '"Hello, DevOps!' > ~/hello.txt && cat ~/hello.txt
 

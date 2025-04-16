@@ -1,3 +1,4 @@
+#!/bin/sh
 # simple
 grep 'path' text.txt
 

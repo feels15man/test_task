@@ -1,7 +1,9 @@
 # Оптимизированный Dockerfile
 # Для запуска .py и .sh файлов я бы реализовал следующий Dockerfile
 
-FROM ubuntu:24.04
+#также для оптимизации образа по пямяти можно использовать python-slim образ
+#В нем будет и поддержка исполнения .sh скриптов из-за того что python образы, основаны на Debian
+FROM ubuntu:24.04 
 RUN apt-get update && apt-get install -y python3
 
 WORKDIR /app
