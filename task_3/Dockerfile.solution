@@ -1,0 +1,10 @@
+# Оптимизированный Dockerfile
+# Для запуска .py и .sh файлов я бы реализовал следующий Dockerfile
+
+FROM ubuntu:24.04
+RUN apt-get update && apt-get install -y python3
+
+WORKDIR /app
+COPY search_path.sh extract_path_value.py config.txt ./
+
+RUN chmod +x search_path.sh extract_path_value.py

@@ -1,0 +1,17 @@
+# Исходный Dockerfile
+
+# Использовать latest плохая пркатика, лучше использовать конкретню версию LTS
+FROM ubuntu:latest 
+RUN apt-get update
+# Нет необходимости скачивать wget
+RUN apt-get install -y wget
+RUN apt-get install -y python3
+# Нет необходимости в pip модуле
+RUN apt-get install -y python3-pip
+# Copy можно свернуть в одну строку + можно сразу перейти через WORKDIR в рабочую директорию (tmp не лучшее название для таковой)
+COPY search_path.sh /tmp/search_path.sh
+COPY extract_path_value.py /tmp/extract_path_value.py
+COPY config.txt /tmp/config.txt
+# cmod свернуть в 1 строку
+RUN chmod +x /tmp/search_path.sh
+RUN chmod +x /tmp/extract_path_value.py
